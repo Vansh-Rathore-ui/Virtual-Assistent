@@ -15,3 +15,6 @@ My project is a virtual assistant aimed at creating an interactive, voice-powere
 5] Wikipedia: Allows the assistant to fetch summaries from Wikipedia, providing instant access to vast amounts of information for user queries.
 
 6] pyjokes: Adds an element of fun to the assistant by delivering jokes, making the interaction not only informative but also entertaining.
+
+
+To install the necessary libraries for your virtual assistant project, you would first open your terminal or command prompt. Start by typing pip install SpeechRecognition to install the speech recognition library. After that, type pip install pywhatkit to get the pywhatkit library, which allows for automation of WhatsApp and YouTube tasks. Next, use pip install pyttsx3 for the text-to-speech conversion library. Follow this with pip install datetime to handle date and time functionalities. To enable Wikipedia search capabilities, run the command pip install wikipedia. Finally, use pip install pyjokes to incorporate the pyjokes library for generating random jokes in your virtual assistant. Once all these commands have been executed successfully, the libraries will be installed, and your environment will be ready for the next steps in building your assistant
