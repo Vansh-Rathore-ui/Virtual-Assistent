@@ -1,0 +1,60 @@
+import speech_recognition as sr #library for speech recognition
+import pyttsx3 as pa #for text to speech library
+import pywhatkit as pw # for searching things from youtube currently though
+import datetime as t # for date ,time etc things like that
+import wikipedia as w #for wikipedia search
+import pyjokes #for  programmers jokes
+
+
+listener = sr.Recognizer() 
+engine=pa.init()
+voices=engine.getProperty('voices')
+engine.setProperty('voice',voices[1].id) #there are two option of voices in it for male =0 and female =1 
+engine.say ("i am your jerry What can I do for You ?")
+
+engine.runAndWait()
+def talk(text):
+    engine.say (text)
+    engine.runAndWait() #this command for running the audio in the talk  functions
+def jerry_command():
+    try:
+         with sr.Microphone() as source:#for using microphone as below voice var. for collecting command
+            print('Listening...')
+            voice = listener.listen(source)
+            command = listener.recognize_google(voice)
+            command = command.lower()
+            if "jerry" in command: #for taking they always say command
+                command = command.replace("jerry", "").strip()
+                talk (command)
+                print (command)
+                return command
+            #else:
+             #   invalid="say my name"
+              #  print(invalid)
+               # talk(invalid)
+                #command=""
+            
+            
+    except Exception as e:
+        print("Error:", e)
+        command= "invalid command"
+    return command
+def run_jerry():
+    command=jerry_command()
+    
+    if "play" in command: #for playing something from youtube
+        song=command.replace("play","").strip()
+        talk("Playing"+song)
+        pw.playonyt(song)
+    elif "time" in command:# for telling time 
+        time=t.datetime.now().strftime("%H:%M")
+        print(time)
+        talk("Time is :"+time)
+    elif "search" in command: #for search feature on wiki but it have very less data store. I used it on superstar it work on rajnikant, akshay kumar etc.
+        person=command.replace("search","").strip()
+        info=w.summary(person,4)
+        print (info)
+        talk (info)
+    elif "joke" in command: #this gives programmers jokes
+        talk(pyjokes.get_joke())
+run_jerry()
