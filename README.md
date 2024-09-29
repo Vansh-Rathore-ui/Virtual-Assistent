@@ -1,5 +1,7 @@
 Virtual Assistant Project by Vansh Rathore
 
+This code is designed to create a voice-activated virtual assistant named "Jerry" using various libraries for speech recognition, text-to-speech conversion, web search, and jokes
+
 This Python-based virtual assistant is designed to perform a range of tasks through voice commands. Utilizing six key libraries—speechrecognition, pywhatkit, pyttsx3, datetime, wikipedia, and pyjokes—the assistant can recognize and execute user instructions. It is capable of tasks like playing music, searching Wikipedia, providing current time and date, making online searches, and telling jokes, all while responding in a synthesized voice. This project demonstrates a solid application of Python in building practical, interactive tools for daily use.
 
 My project is a virtual assistant aimed at creating an interactive, voice-powered library. It combines several powerful Python libraries to make the assistant both informative and entertaining.
